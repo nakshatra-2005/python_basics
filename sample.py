@@ -262,6 +262,74 @@ print('even {} :, odd {} :'.format(even, odd) )
 
 
 
+nums = [1, 2, 3, 4, 5, 6, 6, 7, 8,4, 14]
+evens = list(filter(lambda n : n%2==0, nums))
+doubles = list(map(lambda n : n+2, evens))
+multiples = list(map(lambda n : n*2, evens))
+print(evens)
+print(doubles)
+print(multiples)
+
+
+ # Iterator
+class TopTen:
+    def __init__(self):
+        self.num = 1
+    def __iter__(self):
+        return self
+    def __next__(self):
+        if self.num <= 10:
+            val = self.num
+            self.num +=1
+            return val
+        else:
+            raise StopIteration
+
+
+values = TopTen()
+for i in values:
+    print(i)
+
+# Generator
+def topten():
+    n = 1
+    while n <= 10:
+        sq = n*n
+        yield sq
+        n +=1
+values = topten()
+for i in values:
+     print(i)
+
+# decorators
+def div(a,b):
+    print(a/b)
+
+def smart_div(func):
+    def inner(a,b):
+        if a<b:
+            a,b = b,a
+        return func(a,b)
+    return inner
+
+div = smart_div(div)
+div(3,6)
+
+
+#modules
+def add(a,b):
+    return a+b
+def sub(a,b):
+    return a-b
+def mitl(a,b):
+    return a*b
+def div(a,b):
+    return a/b
+
+
+
+
+
 
 
 

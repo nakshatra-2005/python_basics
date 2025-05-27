@@ -30,18 +30,5 @@ print(x)
 
 
 
-# FUNCTIONS
-#Write a function that takes a number and prints whether it is even or odd.
-def even_odd(number):
-    if number%2==0:
-        print(f"{number} is even")
-    else:
-        print(f"{number}is odd")
-even_odd(8)
-
-#Write a function that takes a number and returns its factorial.
-
-
-
 
 
